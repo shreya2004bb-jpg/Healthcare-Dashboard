@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Patient Dashboard - Final</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav class="top-nav shadow-ui">
+        <div class="nav-logo"><img src="IMAGES/TestLogo.png" alt="Logo"></div>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item-hover"><img src="IMAGES/home.png"> Overview</a></li>
+            <li class="active-nav"><a href="#"><img src="IMAGES/group.png"> Patients</a></li>
+            <li><a href="#" class="nav-item-hover"><img src="IMAGES/calendar.png"> Schedule</a></li>
+            <li><a href="#" class="nav-item-hover"><img src="IMAGES/chat.png"> Message</a></li>
+            <li><a href="#" class="nav-item-hover"><img src="IMAGES/credit.png"> Transactions</a></li>
+        </ul>
+        <div class="nav-user-profile">
+            <div class="doctor-container">
+                <img src="IMAGES/seniorwoman.png" alt="Doctor" class="doctor-img">
+                <div class="doctor-content-wrapper"></div>
+                <div class="doctor-info">
+                    <span class="doctor-name">Dr. Jose Simmons</span>
+                    <div class="doctor-title-container">
+                        <div class="doctor-title-row"></div>
+                        <span class="doctor-title">General Practitioner</span>
+                    </div>
+                </div>
+            <div class="nav-actions">
+                <img src="IMAGES/settings.png" class="icon-hover">
+                <img src="IMAGES/morevert.png" class="icon-hover">
+            </div>
+    </nav>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar card shadow-ui">
+            <div class="sidebar-header">
+                <h2>Patients</h2>
+                <img src="IMAGES/search.png" class="icon-hover">
+            </div>
+            <div class="patient-list">
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 8.png" alt=""></div><div class="info"><strong>Emily Williams</strong>   <span>Female, 18</span>    </div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 1.png" alt=""></div><div class="info"><strong>Ryan Johnson</strong><span>Male, 45</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 3.png" alt=""></div><div class="info"><strong>Brandon Mitchell</strong><span>Male, 36</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item active"><div class="img-placeholder"><img src="IMAGES/Layer 2.png" alt=""></div><div class="info"><strong>Jessica Taylor</strong><span>Female, 28</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 6.png" alt=""></div><div class="info"><strong>Samantha Johnson</strong><span>Female, 56</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 12.png" alt=""></div><div class="info"><strong>Ashley Martinez</strong><span>Female, 54</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 10.png" alt=""></div><div class="info"><strong>Olivia Brown</strong><span>Female, 32</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 9.png" alt=""></div><div class="info"><strong>Tyler Davis</strong><span>Male, 19</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 4.png" alt=""></div><div class="info"><strong>Kevin Anderson</strong><span>Male, 44</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 5.png" alt=""></div><div class="info"><strong>Dylan Thompson</strong><span>Male, 36</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/Layer 7.png" alt=""></div><div class="info"><strong>Nathan Evans</strong><span>Male, 58</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+                <div class="patient-item item-hover"><div class="img-placeholder"><img src="IMAGES/pexels.png" alt=""></div><div class="info"><strong>Mike Nolan</strong><span>Male, 31</span></div></div>
+                <div class="options-icon">
+                <img src="IMAGES/more.png" alt="...">
+            </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="diagnosis-history card shadow-ui">
+                <h3>Diagnosis History</h3>
+                <div class="chart-section-wrapper">
+                    <div class="chart-container">
+                        <div class="chart-header">
+                            <h4>Blood Pressure</h4>
+                            <div class="chart-period icon-hover">Last 6 months <img src="IMAGES/expand.png"></div>
+                        </div>
+                        <canvas id="bpChart"></canvas>
+                    </div>
+                    <div class="chart-stats">
+                        <div class="stat-item stat-ui-hover">
+                            <div class="stat-label"><span class="dot pink"></span> Systolic</div>
+                            <div class="stat-value">160</div>
+                            <div class="stat-comparison"><img src="IMAGES/ArrowUp.png"> Higher than average</div>
+                        </div>
+                        <hr>
+                        <div class="stat-item stat-ui-hover">
+                            <div class="stat-label"><span class="dot purple"></span> Diastolic</div>
+                            <div class="stat-value">78</div>
+                            <div class="stat-comparison"><img src="IMAGES/ArrowDown.png"> Lower than average</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="vitals-row">
+                    <div class="vital-card resp-bg vital-hover"><img src="IMAGES/respiratory rate.png"><p>Respiratory Rate</p><h2>20 bpm</h2><span>Normal</span></div>
+                    <div class="vital-card temp-bg vital-hover"><img src="IMAGES/temperature.png"><p>Temperature</p><h2>98.6°F</h2><span>Normal</span></div>
+                    <div class="vital-card heart-bg vital-hover"><img src="IMAGES/HeartBPM.png"><p>Heart Rate</p><h2>78 bpm</h2><span>Lower than average</span></div>
+                </div>
+            </section>
+
+            <section class="diagnostic-list card shadow-ui">
+                <h3>Diagnostic List</h3>
+                <table>
+                    <thead>
+                        <tr><th>Problem/Diagnosis</th><th>Description</th><th>Status</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-hover"><td>Hypertension</td><td>Chronic high blood pressure</td><td>Under <br>Observation</td></tr>
+                        <tr class="row-hover"><td>Type 2 Diabetes</td><td>Insulin resistance and elevated blood sugar</td><td>Cured</td></tr>
+                        <tr class="row-hover"><td>Asthma</td><td>Recurrent episodes of constriction</td><td>Inactive</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <aside class="right-sidebar">
+            <section class="profile-card card shadow-ui">
+                <div class="profile-img-container"><img src="IMAGES/Layer 2.png" alt="Jessica"></div>
+                <h2 class="profile-name">Jessica Taylor</h2>
+                <div class="info-list">
+                    <div class="info-item"><img src="IMAGES/BirthIcon.png"> <div><p>Date of Birth</p><strong>August 23, 1996</strong></div></div>
+                    <div class="info-item"><img src="IMAGES/FemaleIcon.png"> <div><p>Gender</p><strong>Female</strong></div></div>
+                    <div class="info-item"><img src="IMAGES/PhoneIcon.png"> <div><p>Contact Info.</p><strong>(415) 555-1234</strong></div></div>
+                    <div class="info-item"><img src="IMAGES/PhoneIcon.png"> <div><p>Phone Number</p><strong>(415) 555-1234</strong></div></div>
+                    <div class="info-item"><img src="IMAGES/InsuranceIcon.png"> <div><p>Insurance Provider</p><strong>Sunrise Health Assurance</strong></div></div>
+                </div>
+                <button class="btn-green btn-hover shadow-ui">Show All Information</button>
+            </section>
+
+            <section class="lab-results card shadow-ui">
+                <h3>Lab Results</h3>
+                <ul class="lab-list">
+                    <li class="row-hover">Blood Tests <img src="IMAGES/download.png" class="icon-hover"></li>
+                    <li class="row-hover">CT Scans <img src="IMAGES/download.png" class="icon-hover"></li>
+                    <li class="row-hover">Radiology Reports <img src="IMAGES/download.png" class="icon-hover"></li>
+                    <li class="row-hover">X-Rays <img src="IMAGES/download.png" class="icon-hover"></li>
+                    <li class="row-hover">Urine Test <img src="IMAGES/download.png" class="icon-hover"></li>
+
+                </ul>
+            </section>
+        </aside>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
