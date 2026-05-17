@@ -1,0 +1,257 @@
+:root {
+    --teal: #01F0D0;
+    --bg: #F6F7F8;
+    --white: #FFFFFF;
+    --text: #07263E;
+    --shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; transition: all 0.3s ease; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); padding: 20px; color: var(--text); }
+
+/* Layout Grid Fix */
+.dashboard-container { 
+    display: grid; 
+    grid-template-columns: 320px 1fr 340px; 
+    gap: 20px; 
+    align-items: start;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.shadow-ui { box-shadow: var(--shadow); }
+.card { background: var(--white); border-radius: 16px; padding: 20px; }
+
+/* Navigation */
+.top-nav { display: flex; justify-content: space-between; align-items: center; background: var(--white); padding: 12px 30px; border-radius: 70px; margin-bottom: 25px; }
+.nav-links { display: flex; list-style: none; gap: 8px; }
+.nav-links a { text-decoration: none; color: var(--text); font-weight: 600; padding: 10px 18px; border-radius: 40px; }
+.nav-item-hover:hover { background: #F6F7F8; transform: translateY(-2px); }
+.active-nav a { background: var(--teal); }
+
+/* Sidebar Image Space Fix */
+.sidebar { height: calc(100vh - 140px); display: flex; flex-direction: column; }
+.patient-list { overflow-y: auto; flex: 1; margin-top: 15px; }
+.patient-item { display: flex; align-items: flex-start;justify-content: space-between; padding: 12px; border-radius: 12px; cursor: pointer; margin-bottom: 5px; width: 100%;}
+.img-placeholder { width: 58px; height: 58px; background: #EEE; border-radius: 50%; flex-shrink: 0; margin-right: 15px; overflow: hidden; }
+.img-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.patient-item.active {
+    background: #D8FCF7;
+}
+/* Info: Naam upore, details (Gender, Age) niche */
+.info {
+    display: flex;
+    flex-direction: column; /* Naam ar niche gender details niche nabiye debe */
+    flex-grow: 1; /* Majhkhante text jayga nibe */
+    margin-left: 15px;
+}
+
+.info strong {
+    font-size: 14px;
+    color: #07263E;
+    margin-bottom: 2px;
+    line-height: 1.2; 
+}
+
+.info span {
+    font-size: 12px;
+    color: #707070;
+    margin-top: 2px;
+}
+
+/* Three dots alignment */
+.options-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 20px;
+    margin-top: 0;
+}
+
+.options-icon img {
+    width: 20px;            /* Dot icon er size */
+    opacity: 0.6;           /* Ektu halka rong */
+    margin-left: auto;      /* Daan-dike perfect position thakbe */
+}
+.item-hover:hover { background: #F6F7F8; transform: translateX(8px); }
+.active { background: #D8FCF7; }
+
+/* Graph & UI Styling */
+.chart-section-wrapper { 
+    display: flex; background: #F4F0FF; border-radius: 12px; padding: 30px; 
+    gap: 25px; width: 100%; height: 350px; /* High Height for graph */
+}
+.chart-container { flex: 2; height: 100%; position: relative; }
+.stat-ui-hover:hover { transform: scale(1.05); }
+
+.vitals-row { display: flex; justify-content: space-between; gap: 15px; margin-top: 25px; }
+.vital-card { flex: 1; padding: 20px; border-radius: 12px; }
+.vital-hover:hover { transform: translateY(-8px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); cursor: pointer; }
+.resp-bg { background: #E0F3FA; }
+.temp-bg { background: #FFE6E9; }
+.heart-bg { background: #FFE6F1; }
+
+/* Right Sidebar Styling */
+.profile-img-container { width: 200px; height: 200px; border-radius: 50%; background: #EEE; margin: 0 auto 20px; overflow: hidden; }
+.profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
+.profile-name { text-align: center; margin-bottom: 25px; }
+.info-item { display: flex; gap: 15px; margin-bottom: 20px; align-items: center; }
+.btn-green { background: var(--teal); border: none; width: 100%; padding: 15px; border-radius: 40px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+.btn-hover:hover { background: #01d3b7; transform: scale(1.02); }
+
+/* Table Styling */
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th { text-align: left; background: #F6F7F8; padding: 15px; }
+td { padding: 15px; border-bottom: 1px solid #F3F3F3; }
+.row-hover:hover { background: #F6F7F8; cursor: pointer; }
+
+/* Common UI */
+.dot { height: 10px; width: 10px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+.pink { background: #E66FD2; }
+.purple { background: #8C6FE6; }
+.icon-hover:hover { background: rgba(0,0,0,0.05); border-radius: 50%; cursor: pointer; transform: rotate(10deg); }
+/* Eita dile ekdom steady thakbe, kono movement hobe na */
+.chart-period.icon-hover {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    cursor: pointer !important;
+    padding: 5px 10px !important;
+    border-radius: 8px !important;
+    width: fit-content !important;
+    
+    transition: none !important; 
+    transform: none !important;
+}
+
+.chart-period.icon-hover:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important; 
+    transform: none !important;}
+
+    /* Doctor container configuration */
+.doctor-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Eita lekha ar icons ke ek line-e rakhbe */
+.doctor-content-wrapper {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    align-items: center;
+    gap: 20px;           /* Lekha ar icon-er moddhe space */
+    border-left: 1px solid #F6F7F8; /* Optional: Divider line */
+    padding-left: 12px;
+}
+
+.doctor-info {
+    display: flex;
+    flex-direction: column; /* Name upore, Title niche */
+}
+
+.doctor-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #07263E;
+}
+
+.doctor-title {
+    font-size: 12px;
+    color: #707070;
+}
+
+/* Icons box */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Icon size and shape fix */
+.nav-actions img {
+    width: 20px !important;
+    height: 20px !important;
+    object-fit: contain !important; /* Stretch bondho korbe */
+    cursor: pointer;
+}
+
+/* Dot icon special sizing */
+.dot-icon {
+    width: 4px !important; /* More_vert icon hole width kom hobe */
+    height: 18px !important;
+}
+
+/* Lab List styling */
+.lab-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px; /* Title theke ektu niche */
+}
+
+.lab-list li {
+    display: flex;
+    justify-content: space-between; /* Lekha ba-dike ar Icon daan-dike pathabe */
+    align-items: center;           /* Vertical center alignment */
+    padding: 12px 10px;            /* Item-er bhetore spacing */
+    margin-bottom: 8px;            /* Protiti li-er majhe gap */
+    border-radius: 4px;
+    font-size: 13px;
+    color: #07263E;
+    transition: background 0.2s;
+}
+
+/* Hover korle halka background */
+.lab-list li:hover {
+    background-color: #F6F7F8;
+    cursor: pointer;
+}
+
+/* Download Icon styling */
+.lab-list img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain; /* Jate icon stretch na hoy */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between; /* Patients lekha ba-dike, Icon daan-dike */
+    align-items: center;           /* Vertical center alignment */
+    padding: 20px;                 /* Header-er bhetore spacing */
+    width: 100%;
+}
+
+.sidebar-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #07263E;
+    margin: 0;                     /* Extra margin bad dewa holo */
+}
+
+.search-icon-right {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+    /* transition: none !important; */ /* Jate na nore */
+}
+/* Graph Header Container */
+.chart-header {
+    display: flex;
+    justify-content: space-between; /* Blood Pressure ba-dike, 6 months daan-dike */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Dropdown styling - jate ektuo gap na thake right side theke */
+.chart-period {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #07263E;
+    margin-left: auto; /* Forcefully daan-dike thhele debe */
+}
